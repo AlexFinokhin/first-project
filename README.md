@@ -1,3 +1,3 @@
-Первый проект
+# First project
 
-https://alexfinokhin.github.io/first-project/
+![Первый проект](https://alexfinokhin.github.io/first-project/ "First-project")
