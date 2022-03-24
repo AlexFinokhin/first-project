@@ -12,7 +12,7 @@
   max-height: 756px;
   margin: 0;
   background-color: #f2f2f2;
-  align-items: center;  
+  align-items: center;
   overflow: hidden;
   position: relative;
 }
@@ -21,7 +21,7 @@
   z-index: 2;
 }
 
-.logo_place_header { 
+.logo_place_header {
   width: 183px;
   height: 32px;
   position: absolute;
@@ -36,8 +36,10 @@
 
 .header__title {
   justify-content: center;
+  max-width: 730px;
+  width: 100%;
+  margin: 0;
   margin-left: 64px;
-  width: 730px;
   font-size: 102px;
   font-weight: bold;
   line-height: 96px;
@@ -45,7 +47,9 @@
 }
 
 .header__subtitle {
-  width: 388px;
+  max-width: 388px;
+  width: 100%;
+  margin: 0;
   font-size: 18px;
   font-weight: normal;
   line-height: 25px;
@@ -58,10 +62,7 @@
 .header__main-illustration {
   width: 765px;
   height: 608px;
-  background-image: url(../images/header-image.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  object-fit: cover;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -78,15 +79,16 @@
   z-index: 0;
 }
 
-/* не знаю, как так получилось, что это эти
-классые пустые */
 .description {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
 }
 
 .two-columns {
   display: flex;
   justify-content: space-between;
-  margin: 100px auto 100px auto;
+  margin: 0;
   width: 80%;
 }
 
@@ -106,15 +108,15 @@
   list-style-type: none;
 }
 
-.two-columns__paragraph{
-  margin: 0;
+.two-columns__paragraph {
+  margin: 0 0 30px 0;
   font-size: 24px;
   font-weight: normal;
   line-height: 34px;
-}
 
-.two-columns__paragraph:not(:last-child) {
-  margin-bottom: 30px;
+}
+.two-columns__paragraph:last-child {
+  margin-bottom: 0;
 }
 
 .two-columns__span-accent {
@@ -126,13 +128,14 @@
 .digits { 
   display: flex;
   flex-direction: column;
-  align-items: center;   
+  align-items: center;
+  padding-top: 100px;   
 }
 
 .section-title {
   width: 60%;
   text-align: center;
-  margin: 100px auto 20px auto;
+  margin: 0 0 20px 0;
   font-size: 60px;
   font-weight: bold;
   line-height: 1.15;
@@ -179,8 +182,8 @@
 .feynman {
   display: flex;
   flex-direction: column;
-  align-items: center;  
-  height: 890px;
+  align-items: center;
+  min-height: 890px;
   background-color: #f2f2f2;
   position: relative;
 }
@@ -188,6 +191,7 @@
 .feynman__main-illustration {
   width: 867px;
   height: 637px;
+  object-fit: cover;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -195,7 +199,8 @@
 }
 
 .feynman__title {
-  width: 648px;
+  max-width: 648px;
+  width: 100%;
   margin: 100px 0 0 0;
   font-size: 120px;
   font-weight: bold;
@@ -205,7 +210,8 @@
 }
 
 .feynman__subtitle {
-  width: 388px;
+  max-width: 388px;
+  width: 100%;
   margin: 70px 0 0 0;
   font-size: 36px;
   font-weight: normal;
@@ -228,13 +234,12 @@
 .kaufman {
   display: flex;
   flex-direction: column;
-  color: white;
   overflow: hidden;
   position: relative;
+  color: #ffffff;
   background-color: #1f1f1f;
   z-index: 1;
 }
-
 
 .section-title_theme_dark {
   margin: 90px auto 20px auto;
@@ -252,6 +257,7 @@
 }
 
 .table__cell_theme_dark {
+  
   width: 200px;
   margin-top: 80px;
   z-index: 1;
@@ -277,10 +283,15 @@
   z-index: 0;
 }
 
-
+/* заметил, что в прошлый раз я неправильно задал min-height,
+по брифу он должен быть в .footer, а у меня стоил в .footer__column*/
 .footer {
+  display: flex;
+  min-height: 350px;
   padding: 60px 0 40px 0;
+  color: #ffffff;
   background-color: #1f1f1f;
+  box-sizing: border-box;
 }
 
 .footer__columns {
@@ -288,11 +299,6 @@
   justify-content: space-between;
   width: 90%;
   margin: 0 auto 0 auto;
-  color: white;
-}
-
-.footer__column {
-  min-height: 350px;
 }
 
 .footer__column_content_copyright {
@@ -315,17 +321,6 @@
   line-height: 25px;
 }
 
-/* не знаю, как так получилось, что это эти
-классые пустые */
-.footer__column_content_social {
- 
-}
-
-/* не знаю, как так получилось, что это эти
-классые пустые */
-.footer__column_content_info {
-}
-
 .footer__column-heading { 
   font-size: 18px;
   font-weight: bold;
@@ -333,32 +328,22 @@
   margin: 0;
 }
 
-.footer__column-links {
+.footer__column-list{
   list-style-type: none;
   margin: 20px 0 16px 0;
   padding: 0;
 }
-
+ 
 .footer__column-link {
-  color: white;
+  color: #ffffff;
   font-size: 18px;
   font-weight: normal;
   line-height: 30px;
-  list-style-type: none;
+  
 }
 
-.footer__column-icon {
-  width: 16px; 
+.footer__social-icon {
+  width: 16px;
   height: 16px;
   margin-right: 10px;
 }
-
-
-
-
-
-
-
-
-
-
