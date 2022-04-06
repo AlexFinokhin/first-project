@@ -1,0 +1,9 @@
+.video__iframe {
+    border: none;
+    padding-right: 20px;
+  }
+  .video__iframe[id="ytplayer2"] {
+    border: none;
+  }
+  
+  
